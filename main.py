@@ -9,6 +9,8 @@ from constants import SCREEN_WIDTH, SCREEN_HEIGHT, ASTEROID_MIN_RADIUS, ASTEROID
 
 def main():
 	pygame.init()
+	clock = pygame.time.Clock()
+	dt = 0
 	print(
 	f"Starting Asteroids!\n"
 	f"Screen width: {SCREEN_WIDTH}\n"
@@ -21,6 +23,7 @@ def main():
 				return
 		screen.fill((0, 0, 0))
 		pygame.display.flip()
+		dt = clock.tick(60) / 1000
 
 if __name__ == "__main__":
     main()
