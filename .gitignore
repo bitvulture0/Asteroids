@@ -1,0 +1,34 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Editor swap/temp files
+*.swp
+*.swo
+*.tmp
+
+# Bytecode caches
+*.pyo
+*.pyd
+
+# IDE/project settings
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs or runtime output
+*.log
+
+# Optional: ignore local test assets or saves
+assets/temp/
+saves/
