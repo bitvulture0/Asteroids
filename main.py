@@ -9,6 +9,7 @@ from constants import SCREEN_WIDTH, SCREEN_HEIGHT, ASTEROID_MIN_RADIUS, ASTEROID
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+import sys
 
 def main():
 	pygame.init()
@@ -40,7 +41,13 @@ def main():
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				return
+
 		updatable.update(dt)
+
+		for a in asteroids:
+			if a.collision_check(player):
+				print("Game over!")
+				sys.exit()
 
 		screen.fill((0, 0, 0))
 		for thing in drawable:
