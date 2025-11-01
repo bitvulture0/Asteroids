@@ -6,22 +6,30 @@ Program: Asteroids game
 
 import pygame
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT, ASTEROID_MIN_RADIUS, ASTEROID_KINDS, ASTEROID_SPAWN_RATE, ASTEROID_MAX_RADIUS
+from player import Player
 
 def main():
 	pygame.init()
-	clock = pygame.time.Clock()
-	dt = 0
+	screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 	print(
 	f"Starting Asteroids!\n"
 	f"Screen width: {SCREEN_WIDTH}\n"
 	f"Screen height: {SCREEN_HEIGHT}\n"
 	)
-	screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
+	clock = pygame.time.Clock()
+	dt = 0
+
+	x = SCREEN_WIDTH / 2
+	y = SCREEN_HEIGHT / 2
+	Player_0 = Player(x, y)
+
 	while True:
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				return
 		screen.fill((0, 0, 0))
+		Player_0.draw(screen)
 		pygame.display.flip()
 		dt = clock.tick(60) / 1000
 
